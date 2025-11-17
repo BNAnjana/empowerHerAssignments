@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Masai calculator</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 40px;
+            background: #fafafa;
+        }
+        h1 {
+            color: teal;
+            font-size: 42px;
+            padding: 20px;
+            margin-bottom: 40px;
+        }
+        .calculator {
+            display: inline-block;
+            width: 360px;
+            padding: 30px;
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0px 4px 20px rgba(0,0,0,0.12);
+        }
+        .display {
+            height: 60px;
+            width: 100%;
+            background-color: #fff;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            border: 2px solid #eee;
+            box-shadow: 0px 4px 20px rgba(0,0,0,0.12);
+        }
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+        .btn {
+            height: 60px;
+            background: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 22px;
+            font-weight: bold;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            box-shadow: 0px 3px 10px rgba(0,0,0,0.1);
+            cursor: pointer;
+        }
+        .buttons .btn:nth-child(4),
+        .buttons .btn:nth-child(8),
+        .buttons .btn:nth-child(12),
+        .buttons .btn:nth-child(15),
+        .buttons .btn:nth-child(16) {
+            background: #000;
+            color: #fff;
+        }
+        .buttons .btn:nth-child(13) {
+            background: red;
+            color: white;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Masai Calculator</h1>
+    <div class="calculator">
+        <div class="display"></div>   
+            <div class="buttons">
+                <div class="btn">1</div>
+                <div class="btn">2</div>
+                <div class="btn">3</div>
+                <div class="btn">+</div>
+
+                <div class="btn">4</div>
+                <div class="btn">5</div>
+                <div class="btn">6</div>
+                <div class="btn">-</div>
+
+                <div class="btn">7</div>
+                <div class="btn">8</div>
+                <div class="btn">9</div>
+                <div class="btn">%</div>
+
+                <div class="btn">C</div>
+                <div class="btn">0</div>
+                <div class="btn">=</div>
+                <div class="btn">/</div>
+            </div>
+    </div>
+</body>
+</html>
