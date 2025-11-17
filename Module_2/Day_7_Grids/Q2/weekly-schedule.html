@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+    <title>Weekly Schedule</title>
+    <style>    
+        body {
+            display: flex;
+            flex-direction: column;
+            padding: 10px;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-family: 'Dancing Script', cursive;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: 90px repeat(5, 1fr);
+            grid-template-rows: 30px repeat(9, 1fr);
+            gap: 20px;
+            padding: 10px;
+            font-family: cursive;
+            text-align: center;
+        }
+        .grid .day {
+            font-weight: bold;
+        }
+        .grid .time {
+            font-weight: bold;
+        }
+        .grid div:nth-child(6n+1) {
+            background-color: lightblue;
+            border-radius: 15px;
+            padding: 3px;
+        }
+        .grid div:first-child {
+            background-color: white;
+            border-radius: 15px;
+            padding: 3px;
+        }
+        .grid div:nth-child(6n+2), 
+        .grid div:nth-child(6n+4), 
+        .grid div:nth-child(6n+6) {
+        background-color: lightpink;
+        border-radius: 15px;
+        padding: 3px;
+        }
+        .grid div:nth-child(6n+3), 
+        .grid div:nth-child(6n+5) {
+        background-color: rgb(241, 241, 133);
+        border-radius: 15px;
+        padding: 3px;
+        }
+        .note-row {
+            margin-top: 10px;
+            align-items: flex-end;
+            background-color: lightblue;
+            font-family: cursive;
+            padding: 10px;
+            border-radius: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Weekly schedule</h1>
+    <div class="grid">
+        <div></div>
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thursday</div>
+        <div class="day">Friday</div>
+
+        <div class="time">8:00</div>
+        <div>English</div>
+        <div>Maths</div>
+        <div>Science</div>
+        <div>Social</div>
+        <div>Telugu</div>
+
+        <div class="time">9:00</div>
+        <div>Maths</div>
+        <div>English</div>
+        <div>Social</div>
+        <div>Maths</div>
+        <div>Hindi</div>
+
+        <div class="time">10:00</div>
+        <div>Telugu</div>
+        <div>Science</div>
+        <div>English</div>
+        <div>English</div>
+        <div>English</div>
+
+        <div class="time">11:00</div>
+        <div>Hindi</div>
+        <div>Telugu</div>
+        <div>Slip test</div>
+        <div>Science</div>
+        <div>Maths</div>
+
+        <div class="time">12:00</div>
+        <div>Lunch</div>
+        <div>Lunch</div>
+        <div>Lunch</div>
+        <div>Lunch</div>
+        <div>Lunch</div>
+
+        <div class="time">13:00</div>
+        <div>Slip test</div>
+        <div>Hindi</div>
+        <div>Hindi</div>
+        <div>Art class</div>
+        <div>Science</div>
+
+        <div class="time">14:00</div>
+        <div>Social</div>
+        <div>Art class</div>
+        <div>Maths</div>
+        <div>Telugu</div>
+        <div>Social</div>
+
+        <div class="time">15:00</div>
+        <div>Science</div>
+        <div>Social</div>
+        <div>Telugu</div>
+        <div>Hindi</div>
+        <div>Weekly test</div>
+
+        <div class="time">16:00</div>
+        <div>P.E.</div>
+        <div>P.E.</div>
+        <div>Art class</div>
+        <div>Sports</div>
+        <div>P.T</div>
+
+    </div>
+    <div class="note-row">
+        <strong>Note:</strong>
+    </div>
+</body>
+</html>
