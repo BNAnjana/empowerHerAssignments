@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Blog Hub</title>
+        <style>
+            body {
+                background-color: lightcyan;
+                margin: 0;
+                padding: 0;
+            }
+            main p {
+                font-size: 16px;
+                line-height: 1.6;
+                color: blueviolet;
+            }
+            nav > ul > li {
+                display: inline-block;
+                margin-right: 15px;
+                margin-top: 10px;
+                list-style-type: none;
+                border-bottom: 2px solid green;
+            }
+            nav + h2 {
+                text-align: center;
+                color: rgb(245, 82, 109);
+                background-color: lightgoldenrodyellow;
+                text-transform: uppercase;
+                font-size: 30px;
+            }
+            article h3 ~ p {
+                font-style: italic;
+                color: navy;
+                font-size: large;
+            }
+            nav {
+                text-align: center;
+                padding: 10px;
+            }
+            main {
+                width: 100%;
+                padding: 10px;
+            }
+            aside {
+                width: 25%;
+                background-color: lightgreen;
+                padding: 10px;
+                box-sizing: border-box;
+            }
+            footer {
+                text-align: center;
+                background-color: lightgrey;
+                margin-top: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li> 
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+        <h2>Welcome to Blog Hub!</h2>
+        <main>
+            <h2>Blogs For You</h2>
+            <article>
+                <h3>How to Boost Your Productivity with Time Management</h3>
+                <p>Effective time management is key to increasing productivity and achieving your goals. In this article, we explore top techniques to help you manage your time better, such as the Pomodoro Technique, prioritizing tasks, and eliminating distractions.</p>
+            </article>
+            <article>
+                <h3>Top 10 Travel Destinations for 2025</h3>
+                <p>From tropical beaches to historical cities, 2025 promises exciting adventures for travelers. Discover the best places to visit this year, including hidden gems and popular hotspots. Whether you're seeking relaxation or adventure, these destinations have something for everyone.</p>
+            </article>
+        </main>
+        <aside>
+            <h2>Recent Posts</h2>
+            <ul>
+                <li>5 Tips for Mastering Remote Work</li>
+                <li>Why Mental Health is Just as Important as Physical Health</li>
+                <li>The Future of Artificial Intelligence in Everyday Life</li>
+            </ul>
+        </aside>
+        <footer>
+            <p>&copy; 2023 Blog Hub</p>
+        </footer>
+    </body>
+</html>
