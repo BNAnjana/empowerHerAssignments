@@ -1,0 +1,66 @@
+<html>
+   <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: gold;
+            text-align: center;
+        }
+        form {
+            display: inline-block;
+            text-align: center;
+            margin-top: 20px;
+        }
+        label {
+            margin-right: 10px;
+            font-size: 16px;
+        }
+        input {
+            padding : 5px;
+            margin-bottom: 10px;
+        }
+        button {
+            padding: 10px 30px;
+            background-color: rgb(144, 4, 139);
+            color: white;
+            border: none;         
+        }
+        footer {
+            position: fixed;
+            bottom: 10px;
+            width: 100%;
+            text-align: center;
+        }
+    </style>
+   </head> 
+       <body>
+        <center><header><img src="https://static.vecteezy.com/system/resources/previews/010/925/820/non_2x/colorful-welcome-design-template-free-vector.jpg" alt text="Welcome Image" class="center" width="350" height="150"></header>
+         <h1 style="color:rgb(144, 4, 139);">SignUpHub</h1>
+         <p style="color:green;">Welcome to SignUpHub! Signing up is quick and simple – just enter your details to get started. Whether you’re joining us for the first time or coming back to access exclusive content, your account opens the door to all our features.</p>
+         <main>
+            <form action="#" method="post">
+            <label for="name">Name :</label> <input type="text" id="'name" name="name" required><br>
+            <label for="email">Email :</label> <input type="email" id="'name" name="name" required><br>
+            <fieldset>
+                <legend>Gender :</legend>
+                <label for="male">
+                    <input type="radio" id="male" name="gender" value="male" required> Male
+                </label>
+                <label for="female">
+                    <input type="radio" id="female" name="gender" value="female" required> Female
+                </label>
+                <label for="others">
+                    <input type="radio" id="others" name="gender" value="other" required> Other
+                </label>
+            </fieldset><br>
+            <label for="age">Age :</label> <input type="number" id="'age" name="age" required><br><br><br>
+            <button type="submit" id="submit" name="submit">Sign Up</button>
+           </form>
+         </main>
+        <footer><a href="https://www.google.com">Click Here</a></footer>       
+        </center>
+   </body>  
+</html>
