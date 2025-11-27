@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee Menu</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 10px;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: lightcyan;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+        .card {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 20px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0px 3px 8px rgba(0,0,0,0.1);
+        }
+        .card > img {
+            width: 250px;
+            height: 130px;
+            padding: 5px;
+            border-radius: 20px;
+        }
+        .card p {
+            font-weight: bold;
+            color: brown;
+            padding: 5px;
+        }
+         @media (max-width: 1200px) {
+            .container { grid-template-columns: repeat(3, 1fr); }
+        }
+        @media (max-width: 1199px) and (min-width: 600px) {
+            .container { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 599px) {
+            .container { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <img src="https://www.nabicafe.com/wp-content/uploads/2020/02/Cappuccino_at_Sightglass_Coffee.jpg" alt="Cappuccino">
+            <p>Cappuccino</p>
+        </div>
+
+        <div class="card">
+            <img src="https://www.shutterstock.com/image-photo/cup-americano-coffee-on-saucer-600nw-2497850779.jpg" alt="Americano">
+            <p>Americano</p>
+        </div>
+
+        <div class="card">
+            <img src="https://www.sharmispassions.com/wp-content/uploads/2012/07/espresso-coffee-recipe04-500x500.jpg" alt="Espresso">
+            <p>Espresso</p>
+        </div>
+
+        <div class="card">
+            <img src="https://png.pngtree.com/png-vector/20240131/ourmid/pngtree-espresso-macchiato-coffee-drink-with-foamed-milk-png-image_11520213.png" alt="Machiato">
+            <p>Machiato</p>
+        </div>
+
+        <div class="card">
+            <img src="https://athome.starbucks.com/sites/default/files/styles/recipe_banner_xlarge/public/2024-05/CaffeMocha_RecipeHeader_848x539_%402x.jpg.webp?itok=ov3gQo8W" alt="Mocha">
+            <p>Mocha</p>
+        </div>
+
+        <div class="card">
+            <img src="https://img.freepik.com/premium-photo/close-up-shot-latte-coffee-with-latte-art-ceramic-white-cup-saucer-white-background_659151-1130.jpg" alt="Coffee Latte">
+            <p>Coffee Latte</p>
+        </div>
+
+        <div class="card">
+            <img src="https://whitehorsecoffee.com.au/cdn/shop/articles/9B605647-F527-4816-A532-8449B8DB39FF.jpg?v=1680243604" alt="Piccolo Latte">
+            <p>Piccolo Latte</p>
+        </div>
+
+        <div class="card">
+            <img src="https://png.pngtree.com/png-vector/20251001/ourlarge/pngtree-ristretto-coffee-png-image_17652033.webp" alt="Ristretto">
+            <p>Ristretto</p>
+        </div>
+
+        <div class="card">
+            <img src="https://www.seriouseats.com/thmb/L5D5I7XZTf3wufW7l2eXn0XwRYo=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/20250604-SEA-affogato-AmandaSuarez-04-0cbbfa26cb794280a9cf880fcda0ccd9.jpg" alt="Affogato">
+            <p>Affogato</p>
+        </div>
+
+    </div>
+</body>
+</html>
