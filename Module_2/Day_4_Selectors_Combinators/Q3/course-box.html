@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Masai School Course Box</title>
+    <style>
+        /* Basic reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f9f9f9;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+
+        /* Container for all course boxes */
+        .course-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* 3 columns */
+            gap: 20px;
+            width: 100%;
+            max-width: 1200px;
+            padding: 20px;
+            margin-top: 100px;
+        }
+
+        /* Course Box Styling */
+        .course-box {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            width: 100%;
+            height: 350px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between; /* Ensures buttons stay at the bottom */
+            padding: 20px;
+        }
+
+        /* Course Box Hover Effect */
+        .course-box:hover {
+            background-color: #FF4B4B; /* Red background */
+            color: white;
+        }
+
+        /* Icon and Title Section */
+        .course-box .course-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .course-box .course-header img {
+            width: 100px; /* Set size for images */
+            height: 100px;
+            object-fit: cover;
+            margin-bottom: 10px;
+        }
+
+        .course-box .course-header .course-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: black;
+        }
+
+        /* Course Description Section */
+        .course-box .course-content {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end; /* Align content to the bottom */
+            align-items: center; /* Center align buttons */
+        }
+
+        .course-box .course-content .course-description {
+            font-size: 1rem;
+            color: black;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        /* Button Styling */
+        .course-box .course-content .course-button {
+            padding: 10px;
+            text-align: center;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            margin: 5px;
+            width: 45%; /* Make buttons side by side */
+        }
+
+        /* Make buttons appear side by side */
+        .course-box .course-content .button-container {
+            display: flex;
+            justify-content: center; /* Center the buttons */
+            gap: 10px; /* Add some space between buttons */
+            width: 100%;
+        }
+
+        /* Learn More Button */
+        .course-box .course-content .learn-more {
+            background-color: #FF4B4B; /* Red background */
+            color: white;
+        }
+
+        /* Brochure Button */
+        .course-box .course-content .brochure {
+            background-color: white;
+            color: #FF4B4B; /* Red font color */
+            border: 1px solid #FF4B4B; /* Red border */
+        }
+
+        /* Hover Effect on Buttons */
+        .course-box:hover .learn-more {
+            background-color: white;
+            color: black;
+        }
+
+        .course-box:hover .brochure {
+            background-color: #FF4B4B;
+            color: white;
+            border: 1px solid white;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="course-container">
+        <!-- Course Box 1 -->
+        <div class="course-box">
+            <div class="course-header">
+                <img src="https://e7.pngegg.com/pngimages/369/514/png-clipart-mobile-app-development-application-software-mobile-device-android-mobile-phone-text-phone-icon.png" alt="Mobile App Development">
+                <h3 class="course-title">Mobile App Development</h3>
+            </div>
+            <div class="course-content">
+                <p class="course-description">Learn how to build mobile apps from scratch using React Native. Start your career as a mobile app developer with hands-on projects.</p>
+                <div class="button-container">
+                    <button class="course-button learn-more">Learn More</button>
+                    <button class="course-button brochure">Brochure</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Course Box 2 -->
+        <div class="course-box">
+            <div class="course-header">
+                <img src="https://images-platform.99static.com/FWvZUrBBgg_FQbdXlquX0lf2KSI=/500x500/top/smart/99designs-contests-attachments/28/28801/attachment_28801044" alt="Full Stack Web Development">
+                <h3 class="course-title">Full Stack Web Development</h3>
+            </div>
+            <div class="course-content">
+                <p class="course-description">Become a full-stack web developer by mastering HTML, CSS, JavaScript, and backend technologies like Node.js and Express.</p>
+                <div class="button-container">
+                    <button class="course-button learn-more">Learn More</button>
+                    <button class="course-button brochure">Brochure</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Course Box 3 -->
+        <div class="course-box">
+            <div class="course-header">
+                <img src="https://static.vecteezy.com/system/resources/previews/015/823/692/non_2x/ui-ux-designer-icon-design-free-vector.jpg" alt="UI/UX Design">
+                <h3 class="course-title">UI/UX Design</h3>
+            </div>
+            <div class="course-content">
+                <p class="course-description">Learn UI/UX design principles and create stunning user interfaces with Figma, Sketch, and Adobe XD.</p>
+                <div class="button-container">
+                    <button class="course-button learn-more">Learn More</button>
+                    <button class="course-button brochure">Brochure</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Course Box 4 -->
+        <div class="course-box">
+            <div class="course-header">
+                <img src="https://image.winudf.com/v2/image1/ZGF0YXNjaWVuY2Uuc2NpZW5jZS5kYXRhLmxlYXJuLnByb2dyYW1taW5nLmFuYWx5dGljcy5jb2RpbmcuYW5hbHlzdC5ycGEubWFjaGluZWxlYXJuaW5nLmFpLmJpLmJpZ2RhdGFfaWNvbl8xNjcyOTM5MTE3XzAyNQ/icon.png?w=&fakeurl=1" alt="Data Science">
+                <h3 class="course-title">Data Science</h3>
+            </div>
+            <div class="course-content">
+                <p class="course-description">Master data analysis and machine learning with Python. Learn to work with real-world datasets and develop powerful models.</p>
+                <div class="button-container">
+                    <button class="course-button learn-more">Learn More</button>
+                    <button class="course-button brochure">Brochure</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Course Box 5 -->
+        <div class="course-box">
+            <div class="course-header">
+                <img src="https://media.istockphoto.com/id/1383553886/vector/abstract-banner-cyber-security-in-3d-style-communication-technology-database-system.jpg?s=612x612&w=0&k=20&c=H_EGuMLGF8qTCp_aqYHIyYgUUz-V66gSGffmHV8elOw=" alt="Cybersecurity">
+                <h3 class="course-title">Cybersecurity</h3>
+            </div>
+            <div class="course-content">
+                <p class="course-description">Understand how to protect systems and networks from cyber threats. Get hands-on experience in penetration testing and security protocols.</p>
+                <div class="button-container">
+                    <button class="course-button learn-more">Learn More</button>
+                    <button class="course-button brochure">Brochure</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Course Box 6 -->
+        <div class="course-box">
+            <div class="course-header">
+                <img src="https://www.clipartmax.com/png/middle/69-698035_retail-sector-digital-marketing-png-icon.png" alt="Digital Marketing">
+                <h3 class="course-title">Digital Marketing</h3>
+            </div>
+            <div class="course-content">
+                <p class="course-description">Learn digital marketing strategies including SEO, SEM, social media, email marketing, and content marketing to grow your business online.</p>
+                <div class="button-container">
+                    <button class="course-button learn-more">Learn More</button>
+                    <button class="course-button brochure">Brochure</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
