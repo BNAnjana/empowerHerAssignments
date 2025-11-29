@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM List</title>
+    <style>
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin: 5px 0;
+        }
+
+        .odd {
+            font-weight: bold;
+            color: blue;
+        }
+
+        .even {
+            font-style: italic;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <ul id="item-list">
+        <li>Apple</li>
+        <li>Mango</li>
+        <li>Orange</li>
+    </ul>
+    <button id="add-item-btn">Add Item</button>
+
+    <script>
+        const addButton = document.querySelector("#add-item-btn");
+        const ulElement = document.querySelector("#item-list");
+        
+        addButton.addEventListener("click", function() {
+            const newItem = document.createElement("li");
+            newItem.textContent = "New Item";
+            
+            const liCount = ulElement.children.length + 1;
+
+            if (liCount % 2 === 1) {
+                newItem.classList.add("odd");  // Odd index - bold and blue
+            } else {
+                newItem.classList.add("even"); // Even index - italic and red
+            }
+
+            ulElement.appendChild(newItem);
+        });
+    </script>
+</body>
+</html>
