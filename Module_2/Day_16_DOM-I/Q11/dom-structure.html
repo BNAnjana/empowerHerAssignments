@@ -1,0 +1,37 @@
+<!--Understanding and Navigating the DOM-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom structure</title>
+    <style>
+        body {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+        <h1 id="Head">Hello World</h1>
+        <p>This is DOM.</p>
+        <p>DOM is a tree like structures.</p>
+        <p>DOM is used to navigate and manipulate HTML elements using a tree structure.</p>
+        <div class="container">
+            <p>There are many methods to manipulate elements.</p>
+        </div>
+
+    <script>
+        const heading = document.getElementById("Head");
+        heading.textContent = "Welcome to the DOM World!";
+
+        const para = document.getElementsByTagName("p");
+        for (let p of para) {
+            p.style.color = "blue";
+        }
+
+        const divison = document.querySelector(".container");
+        divison.style.backgroundColor = "yellow";
+        
+    </script>
+</body> 
+</html>
