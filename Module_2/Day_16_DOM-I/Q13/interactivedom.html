@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive DOM page</title>
+    <style>
+        body {
+            text-align: center;
+        }
+
+        div {
+            padding: 10px;
+            margin: 10px;
+            font-size: 1.1rem;
+        }
+
+        button {
+            padding: 10px;
+            border: 1px solid black;
+            font-size: 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: blueviolet;
+            color: white;
+        }
+
+        button:hover {
+            background-color: rgb(168, 103, 228);
+        }
+    </style>
+</head>
+<body>
+    <div>Color: <input type="text" id="colour"></div>
+    <div>Text Content: <input type="text" id="content"></div>
+    <button onclick="changeColor()">Change Background</button> &emsp;
+    <button onclick="updateText()">Update Text</button>
+    <div id="initial-text">Welcome to DOM World!</div>
+
+    <script>
+        function changeColor() {
+            const colour = document.getElementById("colour").value;
+            const initial = document.getElementById("initial-text");
+            
+            // Test whether color is valid
+            const test = document.createElement("div");
+            test.style.color = colour;
+
+            if (!test.style.color) {
+                alert("Invalid color name!");
+                return;
+            }
+            initial.style.backgroundColor = colour;
+        }
+
+        function updateText() {
+            const upText = document.getElementById("content").value;
+            const init = document.getElementById("initial-text");
+
+            if (upText === "") {
+                alert("Please enter some text!");
+                return;
+            }
+            init.textContent = upText;
+        }
+    </script>
+</body>
+</html>
