@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creating and Removing Elements</title>
+</head>
+<body>
+    <button id="add" onclick="addPara()">Add Paragraph</button>
+    <button id="remove" onclick="removePara()">Remove Last Paragraph</button>
+    <div id="line"></div>
+    <script>
+        const add = document.getElementById("add");
+        const remove = document.getElementById("remove");
+        const line = document.getElementById("line");
+
+        // Function to add a new paragraph
+        function addPara() {
+            let Add = document.createElement("p");            // Create a new paragraph element
+            Add.textContent = "This is a new paragraph";     // Set the text content of the new paragraph
+            line.appendChild(Add);                          // Append the new paragraph to the 'line' div
+        }
+
+        // Function to remove the last added paragraph
+        function removePara() {
+            const lastPara = line.lastElementChild;        // Get the last child (paragraph) of the 'line' div
+            if (lastPara) {                               // If a paragraph exists
+                line.removeChild(lastPara);              // Remove the last paragraph
+            }
+        }
+    </script>
+</body>
+</html>
