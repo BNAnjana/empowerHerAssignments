@@ -1,0 +1,9 @@
+.message-card {
+  text-align: center;
+  border: 1px solid #ddd;
+  padding: 20px;
+  margin: 15px;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  width: 300px
+}
