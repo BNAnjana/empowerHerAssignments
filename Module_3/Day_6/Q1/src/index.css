@@ -1,0 +1,19 @@
+body {
+  text-align: center;
+}
+
+button {
+  padding: 10px 16px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: orange;
+  border-radius: 10px;
+}
+
+.true {
+  color: green;
+}
+
+.false {
+  color: red;
+}
