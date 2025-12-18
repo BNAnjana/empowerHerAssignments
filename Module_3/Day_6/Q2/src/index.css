@@ -1,0 +1,19 @@
+body {
+  text-align: center;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+button {
+  padding: 10px 16px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: aqua;
+  border-radius: 10px;
+}
+.red {
+  color: red;
+}
+
+.blue {
+  color: blue;
+}
