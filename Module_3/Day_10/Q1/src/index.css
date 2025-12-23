@@ -1,0 +1,29 @@
+.card{
+    display: block;
+    padding: 15px 20px;
+    border-radius: 10px;
+    margin: 12px 0;
+}
+
+input {
+    display: block;
+    padding: 8px 10px;
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+button {
+    text-align: center;
+    font-size: 14px;
+    padding: 15px 30px;
+    border-radius: 5px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
