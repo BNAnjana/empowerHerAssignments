@@ -1,0 +1,12 @@
+body {
+  font-family: 'Times New Roman', Times, serif;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: 2px solid black;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: skyblue;
+}
