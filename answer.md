@@ -22,18 +22,27 @@ Q2. Role of Backend (BE)
 The Backend (BE) is the server-side part of a web application that manages logic, data, and security.
 
 1. Server-Side Processing:
+
 Processes client requests and applies business rules.
+
 Handles calculations, validations, and workflows.
+
 Generates responses for frontend requests.
 
 2. Database Handling:
+
 Stores, retrieves, updates, and deletes data.
+
 Works with databases like MySQL, PostgreSQL, MongoDB.
+
 Ensures data consistency and integrity.
 
 3. Security and Authentication:
+
 Manages user authentication and authorization.
+
 Protects data using encryption and access control.
+
 Prevents threats like SQL injection and unauthorized access.
 
 Q3. Business Logic
