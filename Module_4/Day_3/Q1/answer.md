@@ -4,9 +4,9 @@ a. Package Managers
 
 1. What is a package manager?
 
-A package manager is a tool that helps developers install, update, remove, and manage external libraries called packages used in a project.
+- A package manager is a tool that helps developers install, update, remove, and manage external libraries called packages used in a project.
 
-Instead of writing everything from scratch, developers use packages that others have already built and tested.
+- Instead of writing everything from scratch, developers use packages that others have already built and tested.
 
 Example:
 
@@ -39,11 +39,11 @@ b. NPM (Node Package Manager)
 
 1. What is NPM?
 
-NPM (Node Package Manager) is the default package manager for Node.js.
+- NPM (Node Package Manager) is the default package manager for Node.js.
 
-It allows developers to install, share, and manage JavaScript packages.
+- It allows developers to install, share, and manage JavaScript packages.
 
-NPM comes automatically when Node.js is installed.
+- NPM comes automatically when Node.js is installed.
 
 2. Why is NPM important for Node.js applications?
 
@@ -80,15 +80,12 @@ npm init
 npm init
 
 - Asks a series of questions (project name, version, author, etc.)
-
 - Creates a customized package.json file
 
 npm init -y
 
 - Skips all questions
-
 - Creates package.json with default values
-
 - Faster for quick setups
 
 d. Files and Folders Created After Project Initialization
@@ -97,9 +94,7 @@ Explain the purpose and importance of:
 1. package.json
 
 - The main configuration file for the project
-
 - Stores project metadata and dependencies
-
 - Required for dependency management
 
 Importance:
@@ -109,7 +104,6 @@ It tells NPM how the project works and what libraries it needs.
 2. node_modules
 
 - Contains all installed project dependencies
-
 - Automatically created by NPM
 
 Importance:
@@ -119,7 +113,6 @@ Holds the actual code of external libraries used in the project.
 3. package-lock.json
 
 - Records exact versions of installed dependencies
-
 - Ensures consistent installations across environments
 
 Importance:
@@ -133,7 +126,6 @@ Also mention:
 node_modules/ folder should not be pushed to github because:
 
 - It's size is very large
-
 - It can be regenerated using npm install
 
 Reason:
@@ -143,7 +135,6 @@ Keeping it out reduces repository size and avoids duplication.
 5. Which files must be committed and why
 
 - package.json
-
 - package-lock.json
 
 Reason:
