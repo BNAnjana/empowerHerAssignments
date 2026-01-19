@@ -1,0 +1,22 @@
+{
+  "users": [
+    {
+      "id": "1768827583001",
+      "name": "Ayesha",
+      "email": "ayesha@gmail.com",
+      "age": 23
+    }
+  ],
+  "todos": [
+    {
+      "id": "1768827745619",
+      "title": "Learn Express",
+      "completed": false
+    },
+    {
+      "id": "1768827971501",
+      "title": "Learn React",
+      "completed": true
+    }
+  ]
+}
