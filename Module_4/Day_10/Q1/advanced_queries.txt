@@ -120,6 +120,8 @@ select course, count(*) as student_count from students group by course order by 
 | Deep Learning      | 2             |
 | React Fundamentals | 1             |
 
+Ordering & Limiting
+
 select * from students order by created_at desc limit 3
 
 | id | name    | email             | age | course        | created_at                 |
