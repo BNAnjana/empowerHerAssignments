@@ -1,0 +1,193 @@
+create table users(id serial primary key, name varchar(50), email varchar(50), created_at timestamp default current_timestamp);
+
+create table orders(id serial primary key, user_id int, amount int, status varchar(20), created_at timestamp default current_timestamp,
+foreign key (user_id) references users(id));
+
+insert into users(name, email) values('Vincenzo', 'cassano@gmail.com');
+insert into users(name, email) values('Nancy', 'nancy@gmail.com');
+insert into users(name, email) values('Steve', 'steve@gmail.com');
+insert into users(name, email) values('Dustin', 'dustybun@gmail.com');
+insert into users(name, email) values('Will', 'willbyers@gmail.com');
+insert into users(name, email) values('Erica', 'erica@gmail.com');
+
+INSERT INTO orders (user_id, amount, status) VALUES
+(1, 1200, 'pending'),
+(1, 25000, 'completed'),
+(1, 900,  'cancelled'),
+(1, 15000, 'completed'),
+
+(2, 3000, 'completed'),
+(2, 150, 'processing'),
+(2, 500, 'completed'),
+
+(3, 750,  'completed'),
+
+(4, 500, 'shipped'),
+(4, 220, 'processing'),
+
+(5, 180, 'pending'),
+(5, 120, 'processing'),
+
+(6, 280, 'pending');
+
+select * from users;
+
+| id | name     | email               | created_at                 |
+| -- | -------- | ------------------- | -------------------------- |
+| 1  | Vincenzo | cassano@gmail.com   | 2026-01-23 16:29:26.922014 |
+| 2  | Nancy    | nancy@gmail.com     | 2026-01-23 16:29:26.922014 |
+| 3  | Steve    | steve@gmail.com     | 2026-01-23 16:29:26.922014 |
+| 4  | Dustin   | dustybun@gmail.com  | 2026-01-23 16:29:26.922014 |
+| 5  | Will     | willbyers@gmail.com | 2026-01-23 16:29:26.922014 |
+| 6  | Erica    | erica@gmail.com     | 2026-01-23 16:29:26.922014 |
+
+select * from orders;
+
+| id | user_id | amount | status     | created_at                 |
+| -- | ------- | ------ | ---------- | -------------------------- |
+| 1  | 1       | 1200   | pending    | 2026-01-23 16:29:34.227872 |
+| 2  | 1       | 25000  | completed  | 2026-01-23 16:29:34.227872 |
+| 3  | 1       | 900    | cancelled  | 2026-01-23 16:29:34.227872 |
+| 4  | 1       | 15000  | completed  | 2026-01-23 16:29:34.227872 |
+| 5  | 2       | 3000   | completed  | 2026-01-23 16:29:34.227872 |
+| 6  | 2       | 150    | processing | 2026-01-23 16:29:34.227872 |
+| 7  | 2       | 500    | completed  | 2026-01-23 16:29:34.227872 |
+| 8  | 3       | 750    | completed  | 2026-01-23 16:29:34.227872 |
+| 9  | 4       | 500    | shipped    | 2026-01-23 16:29:34.227872 |
+| 10 | 4       | 220    | processing | 2026-01-23 16:29:34.227872 |
+| 11 | 5       | 180    | pending    | 2026-01-23 16:29:34.227872 |
+| 12 | 5       | 120    | processing | 2026-01-23 16:29:34.227872 |
+| 13 | 6       | 280    | pending    | 2026-01-23 16:29:34.227872 |
+
+Fetch all orders for a specific user
+
+select orders.id, 
+users.name, 
+orders.amount, 
+orders.status,
+orders.created_at
+from orders join users on orders.user_id = users.id
+where users.id = 1
+order by orders.created_at;
+
+| id | name     | amount | status    | created_at                 |
+| -- | -------- | ------ | --------- | -------------------------- |
+| 1  | Vincenzo | 1200   | pending   | 2026-01-23 16:29:34.227872 |
+| 2  | Vincenzo | 25000  | completed | 2026-01-23 16:29:34.227872 |
+| 3  | Vincenzo | 900    | cancelled | 2026-01-23 16:29:34.227872 |
+| 4  | Vincenzo | 15000  | completed | 2026-01-23 16:29:34.227872 |
+
+Fetch users who have more than one order
+
+select users.id, users.name, count(orders.id) as order_count from users
+join orders on users.id = orders.user_id
+group by users.id, users.name
+having count(orders.id) > 1
+order by users.id;
+
+| id | name     | order_count |
+| -- | -------- | ----------- |
+| 1  | Vincenzo | 4           |
+| 2  | Nancy    | 3           |
+| 4  | Dustin   | 2           |
+| 5  | Will     | 2           |
+
+Fetch total order amount per user
+
+select users.id, users.name, sum(orders.amount) as total_amount from users
+join orders on users.id = orders.user_id
+group by users.id, users.name
+order by total_amount desc;
+
+| id | name     | total_amount |
+| -- | -------- | ------------ |
+| 1  | Vincenzo | 42100        |
+| 2  | Nancy    | 3650         |
+| 3  | Steve    | 750          |
+| 4  | Dustin   | 720          |
+| 5  | Will     | 300          |
+| 6  | Erica    | 280          |
+
+Update the email of one user
+
+update users set email = 'ericasinclair@gmail.com' where name = 'Erica';
+select * from users where name = 'Erica';
+
+| id | name  | email                   | created_at                 |
+| -- | ----- | ----------------------- | -------------------------- |
+| 6  | Erica | ericasinclair@gmail.com | 2026-01-23 16:29:26.922014 |
+
+Update the status of all orders for a specific user
+
+update orders set status = 'completed' where user_id = 1;
+select id, amount, status from orders where user_id = 1;
+
+| id | amount | status    |
+| -- | ------ | --------- |
+| 1  | 1200   | completed |
+| 2  | 25000  | completed |
+| 3  | 900    | completed |
+| 4  | 15000  | completed |
+
+
+Update order amount for a single order
+
+update orders set amount = 250 where user_id = 4 and amount = 220;
+select id, user_id, amount from orders where user_id = 4 and amount = 250;
+
+| id | user_id | amount |
+| -- | ------- | ------ |
+| 10 | 4       | 250    |
+
+Delete one order using order id
+
+delete from orders where orders.id = 11;
+select * from orders order by orders.id;
+
+| id | user_id | amount | status     | created_at                 |
+| -- | ------- | ------ | ---------- | -------------------------- |
+| 1  | 1       | 1200   | completed  | 2026-01-23 16:29:34.227872 |
+| 2  | 1       | 25000  | completed  | 2026-01-23 16:29:34.227872 |
+| 3  | 1       | 900    | completed  | 2026-01-23 16:29:34.227872 |
+| 4  | 1       | 15000  | completed  | 2026-01-23 16:29:34.227872 |
+| 5  | 2       | 3000   | completed  | 2026-01-23 16:29:34.227872 |
+| 6  | 2       | 150    | processing | 2026-01-23 16:29:34.227872 |
+| 7  | 2       | 500    | completed  | 2026-01-23 16:29:34.227872 |
+| 8  | 3       | 750    | completed  | 2026-01-23 16:29:34.227872 |
+| 9  | 4       | 500    | shipped    | 2026-01-23 16:29:34.227872 |
+| 10 | 4       | 250    | processing | 2026-01-23 16:29:34.227872 |
+| 12 | 5       | 120    | processing | 2026-01-23 16:29:34.227872 |
+| 13 | 6       | 280    | pending    | 2026-01-23 16:29:34.227872 |
+
+Delete all orders of a specific user
+
+delete from orders where user_id = 4;
+select * from orders order by orders.id;
+
+| id | user_id | amount | status     | created_at                 |
+| -- | ------- | ------ | ---------- | -------------------------- |
+| 1  | 1       | 1200   | completed  | 2026-01-23 16:29:34.227872 |
+| 2  | 1       | 25000  | completed  | 2026-01-23 16:29:34.227872 |
+| 3  | 1       | 900    | completed  | 2026-01-23 16:29:34.227872 |
+| 4  | 1       | 15000  | completed  | 2026-01-23 16:29:34.227872 |
+| 5  | 2       | 3000   | completed  | 2026-01-23 16:29:34.227872 |
+| 6  | 2       | 150    | processing | 2026-01-23 16:29:34.227872 |
+| 7  | 2       | 500    | completed  | 2026-01-23 16:29:34.227872 |
+| 8  | 3       | 750    | completed  | 2026-01-23 16:29:34.227872 |
+| 12 | 5       | 120    | processing | 2026-01-23 16:29:34.227872 |
+| 13 | 6       | 280    | pending    | 2026-01-23 16:29:34.227872 |
+
+Attempt deleting a user with existing orders and observe the behavior
+
+delete from users where id = 1;
+
+Error: Failed to run sql query: ERROR: 23503: update or delete on table "users" violates foreign key constraint "orders_user_id_fkey" on table "orders" DETAIL: Key (id)=(1) is still referenced from table "orders".
+
+Conceptual Question (Short Answer)
+
+-- Why should orders not be stored inside the users table?
+
+-- Orders should not be stored inside the users table because
+-- one user can have multiple orders (1-to-many relationship).
+-- If we store them together it breaks normalization, makes queries
+-- difficult, and does not scale as the number of orders grows.
